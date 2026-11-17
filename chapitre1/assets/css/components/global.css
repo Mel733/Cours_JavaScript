@@ -1,0 +1,111 @@
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* width inclut padding et bordure */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%; /* évite le zoom auto du texte sur mobile */
+  scroll-behavior: smooth;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; /* reprend la police du body */
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* ===== THÈME SOMBRE ===== */
+:root {
+  --bg: #0f1117;
+  --surface: #181b24;
+  --border: #2a2e3b;
+  --text: #e6e8ee;
+  --text-muted: #9aa0b2;
+  --accent: #7c8cff;
+  --accent-hover: #9aa6ff;
+  --radius: 8px;
+  color-scheme: dark; /* scrollbars et champs en mode sombre */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+input,
+select,
+textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button {
+  background: var(--accent);
+  color: #0f1117;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+::selection {
+  background: var(--accent);
+  color: #0f1117;
+}
