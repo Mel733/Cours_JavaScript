@@ -1,0 +1,54 @@
+#conteneur{
+    background: transparent;
+    border: 4px solid black;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    margin-top: 10px;
+}
+
+#carre{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    
+}
+
+#cercle{
+    position: absolute; /*place le cercle par rapport à son parent, sans cela ça ne bouge pas*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 5px solid yellow; /*seuls les contours seront visibles*/
+    background: transparent; /*cercle transparent*/
+    z-index: 5; /*ce place devant le carré rouge*/
+    pointer-events: none; /* grâce a cette propriété, le cercle laisse passer les clics de la souris sur les boutons*/
+}
+
+
+
+.bouton {
+    position: relative; /*sert de référence pour le riiple
+    overflow: visible; /*permet au cercle de dépasser le bouton*/
+}
+
+.btn-circle {
+    position: absolute; /*place par rapport a son parents donc les boutons*/
+    width: 10px;
+    height: 10px;
+    border: 5px solid rgba(150, 0, 255, 0.5);
+    background: transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /*centre le cercle sur le point ou on clique*/
+    animation: ripple 1s ease-out; /*déclenche une animation ripple, avec une durée de 1sec, qui commenve rapidement et qui ralentit progressivement*/
+    pointer-events: none; /*le cercle n'empeche pas a la souris de cliquer sur les boutons*/
+}
+
+@keyframes ripple { /*animation ripple*/
+     to { /*le cercle commence petit (10px) et grandit jusqu'a 100px */
+        width: 100px; 
+        height: 100px;
+        opacity: 0; /* devient progressivement transparent*/
+    }
+}
