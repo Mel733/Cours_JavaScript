@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Gestionnaire de Tâches</title>
+    <style>
+        .completed { text-decoration: line-through; opacity: 0.6; }
+        .task-item { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+        button { margin: 5px; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Ma Todo List</h1>
+    
+    <!-- Zone d'ajout -->
+    <div>
+        <input type="text" id="newTask" placeholder="Nouvelle tâche...">
+        <button id="addBtn">Ajouter</button>
+    </div>
+    
+    <!-- Filtres -->
+    <div>
+        <button id="filterAll">Toutes</button>
+        <button id="filterPending">En cours</button>
+        <button id="filterCompleted">Terminées</button>
+    </div>
+    
+    <!-- Liste des tâches -->
+    <div id="taskList"></div>
+    
+    <script src="style.js">
+    </script>
+</body>
+</html>

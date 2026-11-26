@@ -55,38 +55,38 @@
 
 
 // //Version sans BOM:
-function calcul (a, b , operateur){ // fonction calculer avec a, b et opérateur comme paramètres
-    if (typeof a !== "number" || typeof b !== "number"){ //si les types de a et b ne sont pas des number
-        console.error("Erreur de typage");//message error dans la console
-        return // fin de la fonction
-    }
+// function calcul (a, b , operateur){ // fonction calculer avec a, b et opérateur comme paramètres
+//     if (typeof a !== "number" || typeof b !== "number"){ //si les types de a et b ne sont pas des number
+//         console.error("Erreur de typage");//message error dans la console
+//         return // fin de la fonction
+//     }
 
-    switch(operateur){ //switch -> équivalent à un elif
-        case "+": // si l'opérateur c'est +
-           console.log(a + b) //affiche dans la console le résultat
-           break; //fin du switch
-        case "-":
-            console.log(a-b)
-            break;
-        case "*":
-            console.log(a * b)
-            break;
-        case "/":
-            //structure conditionnelle ternaire : prédicat, affichage si le prédicat est vrai, else s'il est faux
-            b === 0 ? console.error("Division impossible"): console.log(a/b)
-            break;
-        default: // valeur par défaut
-            console.error("Opérateur inconnu") //opérateur inconnu
+//     switch(operateur){ //switch -> équivalent à un elif
+//         case "+": // si l'opérateur c'est +
+//            console.log(a + b) //affiche dans la console le résultat
+//            break; //fin du switch
+//         case "-":
+//             console.log(a-b)
+//             break;
+//         case "*":
+//             console.log(a * b)
+//             break;
+//         case "/":
+//             //structure conditionnelle ternaire : prédicat, affichage si le prédicat est vrai, else s'il est faux
+//             b === 0 ? console.error("Division impossible"): console.log(a/b)
+//             break;
+//         default: // valeur par défaut
+//             console.error("Opérateur inconnu") //opérateur inconnu
 
-    }
-}
+//     }
+// }
 
-//Version avec BOM
-let auser = Number(prompt("premier chiffre ?")); //demande à l'user de taper son premier chiffre de type number
-let buser = Number(prompt("Second chiffre ? ")); // pareil
-let operatueuruser = prompt("Quel opérateur"); // demande l'opérateur
+// //Version avec BOM
+// let auser = Number(prompt("premier chiffre ?")); //demande à l'user de taper son premier chiffre de type number
+// let buser = Number(prompt("Second chiffre ? ")); // pareil
+// let operatueuruser = prompt("Quel opérateur"); // demande l'opérateur
 
-calcul(auser, buser, operatueuruser); //appelle la fonction avec les variables ci-dessus comme valeurs à calculer avec l'opérateur
+// calcul(auser, buser, operatueuruser); //appelle la fonction avec les variables ci-dessus comme valeurs à calculer avec l'opérateur
 
 //=============================================================================================================================================================
 
@@ -133,29 +133,70 @@ console.dir(h1) //affiche les méthodes et propriétées de h1
 // }
 
 
-const heroes = document.querySelectorAll(".hero-card"); //récupère toutes les cartes de classe hero-card donc tous les héros
+window.onload = () => {
 
-heroes.forEach(function(hero){ //une fonction pour chacun des héros avec hero comme paramètre
-   const input = hero.querySelector("input"); //prend l'input, de chaque héros
-   const bar = hero.querySelector(".level-fill"); //prend la classe level-fill de chaque héros
+    const heroes = document.querySelectorAll(".hero-card");
     
-  
 
-   input.addEventListener("input", function(){ //écoute l'évènement du curseur au niveau de l'input
-    bar.style.width = this.value + "%"; //ajoute un % à la valeur car la largeur a besoin d'une unité, ici en pourcentage dans le CSS
-   //value est la valeur actuelle de l'input, on s'en sert pour modifier dynamiquement la barre
-    if(this.value>=80){ //si la valeur de l'input est supérieur ou égale à 80%; le background de la carte du héro devient vert
-       hero.style.background = "green";
-    } else if (this.value >=50){
-        hero.style.background = "orange"
-    } else{
-        hero.style.background ="red"
-    }
+    heroes.forEach(function(hero) {
+
+        const input = hero.querySelector("input");
+        const bar = hero.querySelector(".level-fill");
+        const texte =hero.querySelector("#textePourcentage")
+        const button = hero.querySelector(".boutton")
+       
+        input.value = bar.style.width.replace("%", "")
+         // bar.style.width = input.value + "%"; L'INVERSE !
+
+        input.addEventListener("input", function() {
+
+            bar.style.width = this.value + "%";
+
+              texte.textContent = input.value + "%"
+            if (this.value >= 80) {
+                hero.style.background = "green";
+
+            } else if (this.value >= 50) {
+                hero.style.background = "orange";
+
+            } else {
+                hero.style.background = "red";
+            }
+
+        }); 
+        
+         button.addEventListener("click", function(){
+            const dossier = hero.dataset.hero    //prend le dossier du héros, qui correspond à la valeur de l'attribut data-hero
+            const random =Math.floor(Math.random()*4)+1;
+            const image = document.createElement("img");    //sinon on créer la balise html img
+            image.src = `asset/img/${dossier}/${random}.jpg`;
+            image.alt = "Une image du héro correspondant"   //texte alternatif
+            image.style.height = 200 + "px";   //change la hauteur
+            image.style.width = 200 + "px"; // change la largeur
+            image.style.position = "absolute" // change sa position
+            image.style.left = 400 + "px";
+            image.style.top = 20 + "px"
+            hero.appendChild(image) //on ajoute l'image a son parent héro
+            
+
+       })
+
+    });
+
+
+
     
-})
-   
+}; 
+
+
+
+//  const imageExistante = hero.querySelector("img") //création d'une variable qui sélectionne la balise img du hero
+//             if(imageExistante){ //si il y en a une
+//                 hero.removeChild(imageExistante) //on la retire, img est sont enfant
+//             } else{}
 
 
 
 
-})
+
+

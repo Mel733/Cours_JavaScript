@@ -22,33 +22,33 @@
     border-radius: 50px;
     border: 5px solid yellow; /*seuls les contours seront visibles*/
     background: transparent; /*cercle transparent*/
-    z-index: 5; /*ce place devant le carré rouge*/
-    pointer-events: none; /* grâce a cette propriété, le cercle laisse passer les clics de la souris sur les boutons*/
+    z-index: 5; /*se place devant le carré rouge*/
+    pointer-events: none; /* grâce à cette propriété, le cercle laisse passer les clics de la souris sur les boutons*/
 }
 
 
 
 .bouton {
-    position: relative; /*sert de référence pour le riiple
+    position: relative; /*sert de référence pour le ripple*/
     overflow: visible; /*permet au cercle de dépasser le bouton*/
 }
 
 .btn-circle {
-    position: absolute; /*place par rapport a son parents donc les boutons*/
+    position: absolute; /*place par rapport à son parent donc les boutons*/
     width: 10px;
     height: 10px;
     border: 5px solid rgba(150, 0, 255, 0.5);
     background: transparent;
     border-radius: 50%;
-    transform: translate(-50%, -50%); /*centre le cercle sur le point ou on clique*/
-    animation: ripple 1s ease-out; /*déclenche une animation ripple, avec une durée de 1sec, qui commenve rapidement et qui ralentit progressivement*/
-    pointer-events: none; /*le cercle n'empeche pas a la souris de cliquer sur les boutons*/
+    transform: translate(-50%, -50%); /*centre le cercle sur le point où on clique*/
+    animation: ripple 1s ease-out; /*déclenche une animation ripple, avec une durée de 1sec, qui commence rapidement et qui ralentit progressivement*/
+    pointer-events: none; /*le cercle n'empêche pas la souris de cliquer sur les boutons*/
 }
 
 @keyframes ripple { /*animation ripple*/
-     to { /*le cercle commence petit (10px) et grandit jusqu'a 100px */
+     to { /*le cercle commence petit (10px) et grandit jusqu'à 100px */
         width: 100px; 
         height: 100px;
-        opacity: 0; /* devient progressivement transparent*/
+        opacity: 0; /* devient progressivement transparent jusqu'à disparaitre*/
     }
 }

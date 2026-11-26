@@ -95,7 +95,7 @@
     <main class="demo-section">
         <h2>Base de Données des Héros</h2>
         
-        <section class="hero-card" id="iron-man" data-hero="tony-stark" data-level="85" data-team="avengers">
+        <section class="hero-card" id="iron-man" data-hero="iron" data-level="3" data-team="avengers">
             <h3 class="hero-name">Tony Stark / Iron Man</h3>
             <div class="hero-info">
                 <span class="power-badge">Technologie</span>
@@ -103,13 +103,18 @@
                 <span class="power-badge">Ingénierie</span>
             </div>
             <div class="level-indicator">
-                <div class="level-fill" style="width: 85%"></div>
+                <div class="level-fill" style="width: 3%"></div>
             </div>
-            <input  type="range" min="0" max="100" value="85" >
+            <input  type="range" min="0" max="100" value="100" >
+             <p id="textePourcentage"></p>
             <p class="hero-description">Milliardaire, philanthrope, inventeur de génie.</p>
+            <button class="boutton" data-image='["asset/img/iron/1.jpg",
+            "asset/img/iron/2.jpg",
+            "asset/img/iron/3.jpg",
+            "asset/img/iron/4.jpg"]'>Cliquez pour voir le hero</button>
         </section>
         
-        <section class="hero-card" id="captain-america" data-hero="steve-rogers" data-level="78" data-team="avengers">
+        <section class="hero-card" id="captain-america" data-hero="captain" data-level="78" data-team="avengers">
             <h3 class="hero-name">Steve Rogers / Captain America</h3>
             <div class="hero-info">
                 <span class="power-badge">Force</span>
@@ -120,10 +125,15 @@
                 <div class="level-fill" style="width: 78%"></div>
             </div>
              <input  type="range" min="0" max="100" value="85" >
+              <p id="textePourcentage"></p>
             <p class="hero-description">Premier Avenger, symbole d'espoir et de justice.</p>
+             <button class="boutton" data-image='["1.jpg",
+              "2.jpg",
+               "3.jpg", 
+               "4.jpg"]'>Cliquez pour voir le hero</button>
         </section>
         
-        <section class="hero-card" id="thor" data-hero="thor-odinson" data-level="92" data-team="avengers">
+        <section class="hero-card" id="thor" data-hero="thor" data-level="92" data-team="avengers">
             <h3 class="hero-name">Thor Odinson</h3>
             <div class="hero-info">
                 <span class="power-badge">Magie</span>
@@ -134,10 +144,15 @@
                 <div class="level-fill" style="width: 92%"></div>
             </div>
              <input  type="range" min="0" max="100" value="85" >
+              <p id="textePourcentage"></p>
             <p class="hero-description">Dieu du Tonnerre, Prince d'Asgard.</p>
+              <button class="boutton" data-image='["1.jpg",
+               "2.jpg",
+               "3.jpg",
+                "4.jpg"]'>Cliquez pour voir le hero</button>
         </section>
         
-        <section class="hero-card" id="hulk" data-hero="bruce-banner" data-level="95" data-team="avengers">
+        <section class="hero-card" id="hulk" data-hero="hulk" data-level="95" data-team="avengers">
             <h3 class="hero-name">Bruce Banner / Hulk</h3>
             <div class="hero-info">
                 <span class="power-badge">Force Illimitée</span>
@@ -148,10 +163,15 @@
                 <div class="level-fill" style="width: 95%"></div>
             </div>
              <input  type="range" min="0" max="100" value="85" >
+              <p id="textePourcentage"></p>
             <p class="hero-description">Scientifique brillant, force de la nature déchaînée.</p>
+             <button class="boutton" data-image='["1.jpg",
+              "2.jpg", 
+              "3.jpg", 
+              "4.jpg"]'>Cliquez pour voir le hero</button>
         </section>
         
-        <section class="hero-card" id="spider-man" data-hero="peter-parker" data-level="75" data-team="young-avengers">
+        <section class="hero-card" id="spider" data-hero="spider" data-level="75" data-team="young-avengers">
             <h3 class="hero-name">Peter Parker / Spider-Man</h3>
             <div class="hero-info">
                 <span class="power-badge">Agilité</span>
@@ -162,10 +182,12 @@
                 <div class="level-fill" style="width: 75%"></div>
             </div>
              <input  type="range" min="0" max="100" value="85">
+              <p id="textePourcentage"></p>
             <p class="hero-description">Votre ami et voisin de quartier, Spider-Man !</p>
+              <button class="boutton" data-image="">Cliquez pour voir le hero</button>
         </section>
         
-        <section class="hero-card special-hero" id="doctor-strange" data-hero="stephen-strange" data-level="88" data-team="mystic">
+        <section class="hero-card special-hero" id="docter-strange" data-hero="doc" data-level="88" data-team="mystic">
             <h3 class="hero-name">Stephen Strange / Doctor Strange</h3>
             <div class="hero-info">
                 <span class="power-badge">Magie Suprême</span>
@@ -175,8 +197,14 @@
             <div class="level-indicator">
                 <div class="level-fill" style="width: 88%"></div>
             </div>
-             <input  type="range" min="0" max="100" value="85" readonly>
+             <input  type="range" min="0" max="100" value="85">
+              <p id="textePourcentage"></p>
             <p class="hero-description">Sorcier Suprême, Maître des Arts Mystiques.</p>
+             <button class="boutton" data-image=
+             '["1.jpg",
+             "2.jpg",
+             "3.jpg",
+             "4.jpg"]'>Cliquez pour voir le hero</button>
         </section>
     </main>
     
